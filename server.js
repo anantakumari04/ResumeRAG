@@ -9,8 +9,18 @@ const resumesRouter = require('./routes/resumes');
 const jobsRouter = require('./routes/jobs');
 
 
-const app = express();
-app.use(cors());
+const allowedOrigins = ['https://resume-rag-frontend.vercel.app', 'http://localhost:5173'];
+app.use(cors({
+  origin: function(origin, callback){
+    if(!origin) return callback(null, true); // allow non-browser requests like Postman
+    if(allowedOrigins.indexOf(origin) !== -1){
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 app.use(morgan('dev'));
 app.use(express.json({limit:'10mb'}));
 app.use(express.urlencoded({extended:true}));
