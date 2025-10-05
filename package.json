@@ -1,0 +1,25 @@
+{
+  "name": "resumerag-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed/seedResumes.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "mammoth": "^1.11.0",
+    "mime-types": "^3.0.1",
+    "mongoose": "^8.19.0",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2",
+    "natural": "^8.1.0",
+    "nodemon": "^3.1.10",
+    "pdf-parse": "^2.1.7",
+    "pdf-parser": "^1.0.5",
+    "uuid": "^13.0.0"
+  }
+}
